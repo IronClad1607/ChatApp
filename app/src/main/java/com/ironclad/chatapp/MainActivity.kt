@@ -1,5 +1,6 @@
 package com.ironclad.chatapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
             val password = etPassword.text.toString()
 
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+            startActivity(Intent(this,ChatActivity::class.java))
         }
     }
 }
